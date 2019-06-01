@@ -67,10 +67,10 @@
         
         h2 {
           font-size: 2.2rem;
+          font-weight: bold;
 
           span {
             color: #03AAEF;
-            font-weight: bold;
           }
         }
 
@@ -148,6 +148,104 @@
         }
       }
 
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .home {
+
+    .page-info {
+
+      .selection-container {
+
+        .select {
+          width: 8rem;
+        }
+      }
+
+      .result-container {
+        width: 43rem;
+        margin-top: 1rem;
+
+        .list-container {
+
+        
+          .list {
+            width: 25rem;
+            .data {
+              div {
+                width: 40%;
+                
+                h3 {
+                  width: 90%;
+                }
+
+                ul {
+                  width: 15rem;
+                  min-height: 20vh;
+                  margin-bottom: 2rem;
+
+                  li {
+                    width: 12rem;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+
+        .info-container {
+
+          input {
+            width: 25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 950px) {
+  .home {
+
+
+
+    .result-container {
+      flex-direction: column;
+
+      .result-container {
+        width: 25rem;
+
+        .list-container {
+
+          .list {
+            min-height: 15vh;
+            .data {
+              div {
+                width: 80%;
+
+                h3 {
+                  width: 80%;
+                }
+
+                ul {
+                  width: 80%;
+                }
+              }
+            }
+          }
+        }
+       
+      }
+
+      .info-container {
+        max-height: 30rem;
+        margin-left: 0 !important;
+      }
     }
   }
 }

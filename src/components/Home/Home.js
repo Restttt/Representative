@@ -78,6 +78,7 @@ const Home = () => {
   const [district, changeDistrict] = useState('District');
   const [phone, changePhone] = useState('Phone');
   const [office, changeOffice] = useState('Office');
+  const [link, changeLink] = useState('Link');
   const [officeType, changeType] = useState(null);
   const [usState, changeUsState] = useState(null);
   const [people, setPeople] = useState([]);
@@ -85,9 +86,9 @@ const Home = () => {
 
   useEffect(() => {
     return () => {
-      return (firstName, lastName, district, phone, office, usState, officeType, people);
+      return (firstName, lastName, district, phone, office, usState, officeType, people, link);
     };
-  }, [firstName, lastName, district, phone, office, officeType, usState, people]);
+  }, [firstName, lastName, district, phone, office, officeType, usState, people, link]);
 
 
   function scrollToData() {
@@ -119,6 +120,7 @@ const Home = () => {
     changeDistrict('Disctrict');
     changePhone('Phone');
     changeOffice('Office');
+    changeLink('Link');
   }
 
   function displayInfo(person) {
@@ -126,11 +128,13 @@ const Home = () => {
     let firstName = person.name.split(' ').slice(0, -1).join(' ');
     let lastName = person.name.split(' ').slice(-1).join(' ');
 
+    
     changeFirst(firstName);
     changeLast(lastName);
     changeDistrict(person.district);
     changePhone(person.phone);
     changeOffice(person.office);
+    changeLink(person.link);
 
     scrollToData();
   }
@@ -224,6 +228,7 @@ const Home = () => {
             <input value={district} readOnly="readOnly" />
             <input value={phone} readOnly="readOnly" />
             <input value={office} readOnly="readOnly" />
+            <a href={link} target="_blank" rel="noopener noreferrer"><input value={link} readOnly="readOnly" /></a>
 
           </div>
 

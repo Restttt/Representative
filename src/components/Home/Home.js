@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Axios from 'axios';
 import Select from 'react-select';
 import swal from 'sweetalert';
@@ -81,6 +81,7 @@ const Home = () => {
   const [officeType, changeType] = useState(null);
   const [usState, changeUsState] = useState(null);
   const [people, setPeople] = useState([]);
+  const personData = useRef("data")
 
   useEffect(() => {
     return () => {
@@ -89,7 +90,10 @@ const Home = () => {
   }, [firstName, lastName, district, phone, office, officeType, usState, people]);
 
 
-
+  function scrollToData() {
+    const height = personData.current.offsetTop - 300;
+    window.scrollTo(0, height);
+  };
 
   function search() {
     if (officeType === null || usState === null) {
@@ -127,6 +131,8 @@ const Home = () => {
     changeDistrict(person.district);
     changePhone(person.phone);
     changeOffice(person.office);
+
+    scrollToData();
   }
 
   
@@ -211,7 +217,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="info-container">
+          <div className="info-container" ref={personData}>
             <h2>Info</h2>
             <input value={firstName} readOnly="readOnly" />
             <input value={lastName} readOnly="readOnly" />

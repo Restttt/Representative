@@ -4,7 +4,7 @@ import Select from 'react-select';
 import swal from 'sweetalert';
 
 
-import './Home.scss';
+import './NewHome.scss';
 
 
 
@@ -176,7 +176,7 @@ const Home = () => {
     <div className="home">
 
       <header>
-        <h1>Who's My Representative?</h1>
+        <h1 className="title blue">Who's My Representative?</h1>
       </header>
 
 
@@ -203,7 +203,7 @@ const Home = () => {
           <div className="list-container">
 
             <div className="list">
-              <h2>List  /  <span>Represenatitives</span></h2>
+              <h2 className="title">List  /  <span className="blue">Represenatitives</span></h2>
               <div className="data">
                 <div>
                   <h3>Name</h3>
@@ -222,7 +222,7 @@ const Home = () => {
           </div>
 
           <div className="info-container" ref={personData}>
-            <h2>Info</h2>
+            <h2 className="title">Info</h2>
             <input value={firstName} readOnly="readOnly" />
             <input value={lastName} readOnly="readOnly" />
             <input value={district} readOnly="readOnly" />

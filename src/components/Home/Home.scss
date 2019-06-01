@@ -249,3 +249,32 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 500px) {
+  .home {
+
+    header {
+      height: 7em;
+
+      h1 {
+        width: 20em;
+        font-size: 1.6em;
+      }
+    }
+
+    .page-info {
+
+      .select-container {
+        width: 20em;
+
+        .select {
+          width: 3em;
+        }
+      }
+
+
+    }
+
+  }
+}
